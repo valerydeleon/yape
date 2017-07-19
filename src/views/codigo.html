@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>Yape | Register</title>
+    <title>Yape | Código</title>
     <link rel="stylesheet" href="../materialize-css/dist/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/static/../assets/css/main.css">
@@ -11,27 +11,23 @@
     <section class="container">
         <div class="row screen-container">
             <div class="center col s12">
-              <img class="responsive-img" src="/static/assets/img/icons/phone.png" alt="phone icon">
+              <img class="responsive-img" src="/static/assets/img/icons/message.png" alt="message icon">
             </div>
             <div class="col s12 center">
-              <h4>Para comenzar validaremos tu número</h4>
-              <h6>Recibirás un SMS con un código de validación</h6>
+              <h4>Ahora ingresa tu código</h4>
+              <h6>Enviamos un SMS con el código de validación al numero xxxx</h6>
             </div>
         </div>
 
         <div class="row">
             <form class="center col s12" id="phone-form">
                 <div class="input-field row">
-                    <i class="material-icons prefix">phone_iphone</i>
+                    <img class="material-icons prefix" src="/static/assets/img/icons/lock.png">
                     <input id="phone-number-input" type="number" class="validate">
-                    <label for="phone-number-input" >Phone Number</label>
+                    <label for="phone-number-input center"></label>
                 </div>
-                <div class="row">
-                    <input id="termsNconditions-checkbox" type="checkbox" class="filled-in"  />
-                    <label for="termsNconditions-checkbox">Acepto los<a>Términos y condiciones.</a></label>
-                </div>
-                <div class="row">
-                  <button id="continue-btn" type="submit" href="static/views/codigo.html" class="btn amber accent-4 white-text">CONTINUAR</button>
+                <div class="row center">
+                    <p class="valign-wrapper"> Reintentar en <img src="/static/assets/img/icons/clock.png"> </p>
                 </div>
             </form>
         </div>
@@ -40,5 +36,14 @@
     <script type="text/javascript" src="./../jquery/dist/jquery.min.js" ></script>
     <script type="text/javascript" src="./../materialize-css/dist/js/materialize.min.js"></script>
     <script type="text/javascript" src="../assets/js/app.js"></script>
+    <script>
+          function cargarPagina(){
+              setTimeout(function(){
+                location.href="views/../user.html";
+              }, 2000)
+            };
+
+          $(document).ready(cargarPagina);
+    </script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 section.carousel{
   margin-top: 5vh;
-  min-height: 600px;
+  min-height: 800px;
 }
 
 .carousel-content{
@@ -16,6 +16,7 @@ section.carousel{
 
 .carousel-text{
   margin-bottom: 2vh;
+  color: #38052a;
 }
 
 .carousel .indicators .indicator-item {
@@ -29,4 +30,13 @@ section.carousel{
 
 .material-icons{
   color: #757575;
+}
+
+#success{
+  background-color: #fbd43b;
+}
+
+.screen-container{
+  margin-top: 30vh;
+  height: 100%;
 }
