@@ -1,1 +1,1 @@
-.img-carousel{background-image:url("../img/icons/icon-people.png");background-position:center;background-repeat:no-repeat;background-size:cover}
+section.carousel{margin-top:5vh;min-height:600px}.carousel-content{margin-top:2vh;margin-bottom:2vh}.carousel-img{width:50%;min-height:50%;margin-top:5vh}.carousel-text{margin-bottom:2vh}.carousel .indicators .indicator-item{background-color:rgba(212,212,212,0.3);height:20px;width:20px}.carousel .indicators .indicator-item.active{background-color:#d32f2f}
