@@ -18,16 +18,29 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/', express.static('public'));
 app.use('/static', express.static(__dirname + '/src'))
-app.use('/static', express.static(__dirname + '/views'))
-app.use("/", express.static(__dirname + '/node_modules'))
+app.use("/static", express.static(__dirname + '/node_modules'))
 app.use("/app.js", express.static(__dirname + '/app.js'))
 
 app.use(morgan(format));
 
+// app.get('/', function(req, res){
+//   res.sendFile(__dirname + "/public/index.html");
+// });
+
+//saber donde se hace el request
+// que metod utiliza la api (post)
+//que indfo se necesita enviar en cada request
+//parametrso para hacer un reqyest ajax
+//url: http://localhost:3000/api/registerNumber
+                                //  metodo post
+//metodo HHTP: post
+//data: "..." "terms:" "..."
+
 let router = express.Router();
 
 router.get('/', (req, res) => {
-  res.json({ name: 'yape-api',version: "0.0.1"});
+  res.sendFile(__dirname + "/public/index.html");
+  // res.json({ name: 'yape-api',version: "0.0.1"});
 });
 
 app.use('/api',apiUsers(router,db));

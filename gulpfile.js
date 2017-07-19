@@ -5,12 +5,16 @@ var sass = require('gulp-sass');
 
 var config = {
   source: './src/',
-  dist: "./public/"
+  dist: "./public/",
+  view: "./views/"
 }
 
 var paths = {
   assets: "assets/",
+  views: "views/",
+
   html: "**/*.html",
+  registerHtml: "views/*.html",
 
   js: "js/**/*.js",
   mainJs: "js/app.js",
@@ -24,6 +28,9 @@ var sources = {
 
   html: config.source + paths.html,
 
+  views: paths.views + paths.html,
+  rootViews: config.source + paths.views + paths.html,
+
   sass: paths.asstes + paths.sass,
   rootSass: config.source + paths.assets + paths.mainSass,
 
@@ -34,6 +41,9 @@ var sources = {
 gulp.task('html', function(){
   gulp.src(sources.html)
   .pipe(gulp.dest(config.dist));
+
+  gulp.src(sources.views)
+  .pipe(gulp.dest(config.view));
 });
 
 gulp.task('sass', function(){
