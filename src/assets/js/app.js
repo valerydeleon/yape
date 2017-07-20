@@ -1,26 +1,80 @@
 
 var cargarPagina = function(){
-   $('.carousel.carousel-slider').carousel({fullWidth: true});
-   validatePhoneNumber();
-   $(document).on("keypress","#phone-number-input",validatePhoneNumber);
-   $('#continue-btn').click(goToCodigoHtml);
+  //  $('.carousel.carousel-slider').carousel({fullWidth: true});
+   $phoneNumberInput.keyup(validatePhoneNumber); //valida el numero
+   $('#continue-btn').click(validatePhoneForm, goToCodigoHtml); //al dar click valida el formulario y redirige a codigo.html
+   $phoneForm.submit(validatePhoneForm); //al mandar formulario valida formulario
+   $('#codeInLocal').append('<p>' + localStorage.userPhoneNumber + '</p>'); //
 }
-
+var url = "http://localhost:3000/api/registerNumber"; //url de api
+var codeUrl = "views/../codigo.html"
 var $phoneForm = $('#phone-form'); //toma el formulario
 var $phoneNumberInput = $('#phone-number-input'); //toma el valor del input del telefono
 var $termsNconditionsCheckbox = $('#termsNconditions-checkbox'); //toma el checkboxTel
 var $continueBtn = $('#continue-btn'); //toma el boton continuar
 
+//funcion que redirige a la url de api
 var goToCodigoHtml = function(){
-  location.href="views/../codigo.html";
-}
+  location.href="views/../codigo.html"
+};
 
-var validatePhoneNumber = function(){
-  var $phoneOk = $phoneNumberInput.val().length;
-  if ($phoneOk === 10 && $termsNconditionsCheckbox.is(':checked')){
-    console.log('checked')
-    $continueBtn.removeClass('disabled');
-  }
+//valida formulario
+var validatePhoneForm = function(event){
+  event.preventDefault()
+  var $phoneOk = $phoneNumberInput.val();
+  if ($phoneOk.length == 10 && $termsNconditionsCheckbox.is(':checked')){
+    var response = registerNumberApi($phoneOk);
+  }//else {
+  //   alert('¡Error!, Acepte los Términos y Condiciones o verifique el número telefónico')
+  // }
+};
+
+//valida numero telefonico
+//codigo acii 0=48 -> 9=57
+var validatePhoneNumber = function(event){
+  var asciiCode = event.keyCode; //obtiene el codigo de teclado
+  if (asciiCode != 13) {
+    if ($phoneNumberInput.val().length > 9 || asciiCode <= 48 || asciiCode >= 57) {
+      // si el valor del input es mayor a 9, asciiCode es del 48 al 57 (0 al 9)
+      return false;
+    }else if (isNaN(event.key)) {
+      // si no es un numero
+      return false;
+    }else if ($phoneNumberInput.val().length == 9) {
+      $continueBtn.removeClass('disabled');
+      // si el codigo ingresado es igual a 9 caracteres remover la clase de desabiltado
+      return true;
+    };
+  };
+};
+
+// obtencion del api
+var registerNumberApi = function(phoneNumber){
+  $.post(url,{
+    "phone": phoneNumber,
+    "terms": true
+  }, function(response){
+    validatePhoneNumberOK(response) // valida la respuesta con el numero
+  });
+};
+
+// valida que sea un dato correcto y manda llamar la funcion del codigo del usuario en codigo.htlm
+var validatePhoneNumberOK = function(response){
+  if (response.message != "Valid User") {
+    alert('Teléfono registrado')
+  }else {
+    userCodeValidation(response);
+    alert("Codigo de verificación: " + localStorage.getItem("userCodeToVerification"));
+    location.href = "codigo.html";
+  };
+};
+
+// funcion que gusrada el telefono y codigo de usuario
+var userCodeValidation = function (){
+  // console.log(response.data.code);
+  localStorage.setItem("userCodeToVerification", response.data.code); //guarda el codigo de verificacion de la api
+  localStorage.setItem("userPhoneNumber", response.data.phone); //guarda el numero telefonico ingresado por el usuario a la api
+  return response;
 };
 
 $(document).ready(cargarPagina);
@@ -43,8 +97,6 @@ $(document).ready(cargarPagina);
 // });
 // }
 //
-
-
 // $.post('http://localhost:3000/api/registerNumber',{
 //   "phone": "5543656168",
 //   "terms": true
