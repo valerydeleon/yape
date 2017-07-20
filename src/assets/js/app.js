@@ -2,6 +2,8 @@
 var cargarPagina = function(){
    $('.carousel.carousel-slider').carousel({fullWidth: true});
    validatePhoneNumber();
+   $(document).on("keypress","#phone-number-input",validatePhoneNumber);
+   $('#continue-btn').click(goToCodigoHtml);
 }
 
 var $phoneForm = $('#phone-form'); //toma el formulario
@@ -9,16 +11,15 @@ var $phoneNumberInput = $('#phone-number-input'); //toma el valor del input del 
 var $termsNconditionsCheckbox = $('#termsNconditions-checkbox'); //toma el checkboxTel
 var $continueBtn = $('#continue-btn'); //toma el boton continuar
 
-$phoneNumberInput.keyup(validatePhoneNumber);
+var goToCodigoHtml = function(){
+  location.href="views/../codigo.html";
+}
 
 var validatePhoneNumber = function(){
   var $phoneOk = $phoneNumberInput.val().length;
-  if ($phoneOk == 10){
-    $termsNconditionsCheckbox.attr("checked", true);
-    $continueBtn.removeAttr('disabled');
-  }else {
-    $termsNconditionsCheckbox.removeAttr('checked')
-    $continueBtn.attr("disabled", true);
+  if ($phoneOk === 10 && $termsNconditionsCheckbox.is(':checked')){
+    console.log('checked')
+    $continueBtn.removeClass('disabled');
   }
 };
 
