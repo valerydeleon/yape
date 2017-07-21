@@ -3,7 +3,7 @@
 var cargarPagina = function(){
   //  $('.carousel.carousel-slider').carousel({fullWidth: true});
    $phoneNumberInput.keyup(validatePhoneNumber); //valida el numero
-   $('#continue-btn').click(validatePhoneForm, goToCodigoHtml); //al dar click valida el formulario y redirige a codigo.html
+   $('#continue-regiter-btn').click(validatePhoneForm, goToCodigoHtml); //al dar click valida el formulario y redirige a codigo.html
    $phoneForm.submit(validatePhoneForm); //al mandar formulario valida formulario
    $('#codeInLocal').append('<p>' + localStorage.userPhoneNumber + '</p>'); //
 }
@@ -12,7 +12,7 @@ var codeUrl = "views/../codigo.html"
 var $phoneForm = $('#phone-form'); //toma el formulario
 var $phoneNumberInput = $('#phone-number-input'); //toma el valor del input del telefono
 var $termsNconditionsCheckbox = $('#termsNconditions-checkbox'); //toma el checkboxTel
-var $continueBtn = $('#continue-btn'); //toma el boton continuar
+var $continueBtn = $('#continue-regiter-btn'); //toma el boton continuar
 
 //funcion que redirige a la url de api
 var goToCodigoHtml = function(){

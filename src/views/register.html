@@ -9,7 +9,7 @@
   </head>
   <body>
     <section class="container">
-        <div class="row screen-container">
+        <div class="row img-container">
             <div class="center col s12">
               <img class="responsive-img" src="/static/assets/img/icons/phone.png" alt="phone icon">
             </div>
@@ -22,16 +22,16 @@
         <div class="row">
             <form class="center col s12" id="phone-form">
                 <div class="input-field row">
-                    <i class="material-icons prefix">phone_iphone</i>
-                    <input id="phone-number-input" type="tel">
-                    <label for="phone-number-input" >Phone Number</label>
+                    <img class="img-icon-large col s3" src="/static/assets/img/icons/phoneandnumber.png">
+                    <input class="col s9" id="phone-number-input" type="tel">
+                    <label for="phone-number-input" class="col s9 center"></label>
                 </div>
                 <div class="row">
                     <input id="termsNconditions-checkbox" type="checkbox" class="filled-in "  />
                     <label for="termsNconditions-checkbox">Acepto los<a>Términos y condiciones.</a></label>
                 </div>
                 <div class="row">
-                  <button id="continue-btn" type="submit" href="static/views/codigo.html" class="btn amber accent-4 white-text disabled">CONTINUAR</button>
+                  <button id="continue-regiter-btn" type="submit" href="static/views/codigo.html" class="btn amber accent-4 white-text disabled">CONTINUAR</button>
                 </div>
             </form>
         </div>

@@ -9,7 +9,7 @@
   </head>
   <body id="success">
     <section class="container">
-        <div class="row screen-container">
+        <div class="row img-container">
             <div class="col s12 center-align">
                 <img class="responsive-img " src="/static/assets/img/icons/check.png" alt="check">
             </div>
@@ -19,6 +19,14 @@
 
     <script type="text/javascript" src="./../jquery/dist/jquery.min.js" ></script>
     <script type="text/javascript" src="./../materialize-css/dist/js/materialize.min.js"></script>
+    <script>
+          function cargarPagina(){
+              setTimeout(function(){
+                location.href="views/../tdc.html";
+              }, 3000)
+            };
 
+          $(document).ready(cargarPagina);
+    </script>
   </body>
 </html>

@@ -9,7 +9,7 @@
   </head>
   <body>
     <section class="container">
-        <div class="row screen-container">
+        <div class="row img-container">
             <div class="center col s12">
               <img class="responsive-img" src="/static/assets/img/icons/message.png" alt="message icon">
             </div>
@@ -20,23 +20,32 @@
         </div>
 
         <div class="row">
-            <form class="center col s12" id="phone-form">
+            <form class="center col s12" id="code-form">
                 <div class="input-field row">
-                    <img class="material-icons prefix" src="/static/assets/img/icons/lock.png">
-                    <input id="phone-number-input" type="number" class="validate">
-                    <label for="phone-number-input center"></label>
+                    <img class="img-icon col s3" src="/static/assets/img/icons/lock.png">
+                    <input name="userCodeToVerification" class="col s9 center" id="user-verification-code" type="text" placeholder="  -  -  -  -  -  ">
+                    <label for="user-verification-code" class="col s9 center"></label>
                 </div>
                 <div class="row center">
                     <p class="valign-wrapper"> Reintentar en <img src="/static/assets/img/icons/clock.png"> </p>
                 </div>
             </form>
+
+
+            <div class="row center">
+              <span class="col s3"></span>
+              <a id="continue-code-btn" href="views/../user.html" class="col s6 btn waves-effect amber accent-4 white-text">CONTINUAR prueba</a>
+              <!-- <button id="continue-code-btn" type="submit" href="static/views/user.html" class="btn amber accent-4 white-text">CONTINUAR</button> -->
+              <span class="col s3"></span>
+            </div>
+
         </div>
     </section>
 
     <script type="text/javascript" src="./../jquery/dist/jquery.min.js" ></script>
     <script type="text/javascript" src="./../materialize-css/dist/js/materialize.min.js"></script>
     <script type="text/javascript" src="../assets/js/app.js"></script>
-    <script>
+    <!-- <script>
           function cargarPagina(){
               setTimeout(function(){
                 location.href="views/../user.html";
@@ -44,6 +53,6 @@
             };
 
           $(document).ready(cargarPagina);
-    </script>
+    </script> -->
   </body>
 </html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Yape | Código</title>
+    <link rel="stylesheet" href="../materialize-css/dist/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/static/../assets/css/main.css">
+  </head>
+  <body>
+    <section class="container">
+        <div class="row img-container">
+            <div class="center col s12">
+              <img class="responsive-img" src="/static/assets/img/icons/bcp-logo.png" alt="bcp-logo icon">
+            </div>
+            <div class="col s12 center">
+              <h4>Ingresa la clave de tu tarjeta</h4>
+              <h5>tarjeta****</h5>
+            </div>
+        </div>
+
+        <div class="row center-align">
+            <form class="center col s12" id="tdc-key-form">
+                <div class="input-field row">
+                    <img class="img-icon col s3" src="/static/assets/img/icons/lock.png">
+                    <input id="tdc-key-input" type="password" class="col s9 center" type="text" placeholder=" *  *  * ">
+                    <label for="tdc-key-input" class="col s9 center"></label>
+                </div>
+            </form>
+            <div class="row center col s12">
+              <span class="col s3"></span>
+              <a id="continue-tdc-key-btn" href="views/../home.html" class="col s6 btn waves-effect amber accent-4 white-text">CONTINUAR prueba</a>
+              <!-- <button id="continue-tdc-key-btn" type="submit" href="static/views/home.html" class="btn amber accent-4 white-text">REGISTRAR</button><!--disabled-->
+              <span class="col s3"></span>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="./../jquery/dist/jquery.min.js" ></script>
+    <script type="text/javascript" src="./../materialize-css/dist/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../assets/js/app.js"></script>
+
+  </body>
+</html>

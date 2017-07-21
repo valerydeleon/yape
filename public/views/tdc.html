@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Yape | Código</title>
+    <link rel="stylesheet" href="../materialize-css/dist/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/static/../assets/css/main.css">
+  </head>
+  <body>
+    <section class="container">
+        <div class="row img-container">
+            <div class="center col s12">
+              <img class="responsive-img" src="/static/assets/img/icons/bcp-logo.png" alt="bcp-logo icon">
+            </div>
+            <div class="col s12 center">
+              <h4>Registra tu Tarjeta débito BCP</h4>
+              <h6>Por ahora solo aceptamos cuentas de ahorro y/o corriente en soles</h6>
+            </div>
+        </div>
+
+        <div class="row center-align">
+            <form class="center col s12" id="tdc-form">
+                <div class="input-field row">
+                    <img class="prefix" src="/static/assets/img/icons/card.png">
+                    <input id="tdc-number-input" type="number">
+                    <label for="tcd-number-input center"></label>
+                </div>
+                <div class="row">
+                    <span class="col s4"></span>
+                    <p class="valign-wrapper green-text col s4"><img class="img-icon-large" src="/static/assets/img/icons/scan.png"> Escanear tarjeta  </p>
+                    <span class="col s4"></span>
+                </div>
+                <div class="row center">
+                    <div class="col s12 valign-wrapper">
+                        <span class="col s2"></span>
+                        <div class="col s4">
+                            <p>Fecha de vencimiento:</p>
+                        </div>
+                        <div class="col s2">
+                            <div class="input-field inline">
+                                <input id="month" type="number" class="center" placeholder="Mes">
+                                <label for="month" data-error="wrong" data-success="right"></label>
+                            </div>
+                        </div>/
+                        <div class="col s2">
+                            <div class="input-field inline">
+                                <input id="year" type="number" class="center" placeholder="Año">
+                                <label for="year" data-error="wrong" data-success="right"></label>
+                            </div>
+                        </div>
+                        <span class="col s2"></span>
+                    </div>
+                </div>
+            </form>
+            <div class="row center col s12">
+                <span class="col s3"></span>
+                <a id="continue-tdc-btn" href="views/../clavetdc.html" class="col s6 btn waves-effect amber accent-4 white-text">CONTINUAR prueba</a>
+                <!-- <button id="continue-bt" type="submit" href="static/views/clavetdc.html" class="btn amber accent-4 white-text">CONTINUAR</button><!--disabled-->
+                <span class="col s3"></span>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="./../jquery/dist/jquery.min.js" ></script>
+    <script type="text/javascript" src="./../materialize-css/dist/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../assets/js/app.js"></script>
+
+  </body>
+</html>

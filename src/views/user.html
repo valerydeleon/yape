@@ -9,7 +9,7 @@
   </head>
   <body>
     <section class="container">
-        <div class="row screen-container">
+        <div class="row img-container">
             <div class="center col s12">
               <img class="responsive-img" src="/static/assets/img/icons/lockone.png" alt="lockone icon">
             </div>
@@ -20,27 +20,30 @@
         </div>
 
         <div class="row">
-            <form class="center col s12" id="phone-form">
+            <form class="center col s12" id="user-form">
                 <div class="input-field row">
-                  <img class="material-icons prefix" src="/static/assets/img/icons/user.png">
-                  <input id="phone-number-input" type="text" class="validate">
-                  <label for="phone-number-input center">Nombre</label>
+                    <img class="img-icon col s3" src="/static/assets/img/icons/user.png">
+                    <input id="user-name-input" class="col s9 center" type="text" placeholder="Nombre">
+                    <label for="user-name-input" class="col s9 center"></label>
                 </div>
                 <div class="input-field row">
-                  <img class="material-icons prefix" src="/static/assets/img/icons/message-gray.png">
-                  <input id="phone-number-input" type="email" class="validate">
-                  <label for="phone-number-input center">Correo@ejemplo.com</label>
+                    <img class="img-icon col s3" src="/static/assets/img/icons/message-gray.png">
+                    <input id="user-mail-input" class="col s9 center" type="email" placeholder="Correo@ejemplo.com">
+                    <label for="user-mail-input" class="col s9 center"></label>
                 </div>
                 <div class="input-field row">
-                  <img class="material-icons prefix" src="/static/assets/img/icons/lock.png">
-                  <input id="phone-number-input" type="password" class="validate">
-                  <label for="phone-number-input center">ingresa clave de 6 dígitos</label>
+                    <img class="img-icon col s3" src="/static/assets/img/icons/lock.png">
+                    <input id="user-password-input" class="col s9 center" type="password" placeholder="Ingresa clave de 6 dígitos">
+                    <label for="user-password-input" class="col s9 center"></label>
                 </div>
                 <div class="row center">
-                    <p class="valign-wrapper"> Cuida esta clave como oro, es tu acceso a Yape.</p>
+                    <p class="col s12"> Cuida esta clave como oro, es tu acceso a Yape.</p>
                 </div>
                 <div class="row">
-                  <button id="continue-btn" type="submit" href="static/views/codigo.html" class="btn amber accent-4 white-text">CONTINUAR</button>
+                  <span class="col s3"></span>
+                  <a id="continue-user-btn" href="views/../success.html" class="col s6 btn waves-effect amber accent-4 white-text">CONTINUAR prueba</a>
+                  <!-- <button id="continue-user-btn" type="submit" href="static/views/success.html" class="btn amber accent-4 white-text">CONTINUAR</button> -->
+                  <span class="col s3"></span>
                 </div>
             </form>
         </div>
@@ -49,7 +52,7 @@
     <script type="text/javascript" src="./../jquery/dist/jquery.min.js" ></script>
     <script type="text/javascript" src="./../materialize-css/dist/js/materialize.min.js"></script>
     <script type="text/javascript" src="../assets/js/app.js"></script>
-    <script>
+    <!-- <script>
           function cargarPagina(){
               setTimeout(function(){
                 location.href="views/../success.html";
@@ -57,6 +60,6 @@
             };
 
           $(document).ready(cargarPagina);
-    </script>
+    </script> -->
   </body>
 </html>

@@ -1,4 +1,4 @@
-section.carousel{
+section.carousel.carousel-slider.center{
   margin-top: 5vh;
   min-height: 800px;
 }
@@ -28,6 +28,34 @@ section.carousel{
   background-color: #d32f2f;
 }
 
+img.img-icon.col.s3{
+  width: 50px;
+  height: 100%;
+}
+
+img.img-icon-large.col.s3{
+  height: 100%;
+}
+
+input[type=text]:not(.browser-default){
+  font-size: 1.5rem;
+  margin: 0px;
+}
+input[type=tel]:not(.browser-default){
+  font-size: 1.5rem;
+  margin: 0px;
+}
+
+input[type=password]:not(.browser-default){
+  font-size: 1.5rem;
+  margin: 0px;
+}
+
+input[type=email]:not(.browser-default){
+  font-size: 1.5rem;
+  margin: 0px;
+}
+
 .material-icons{
   color: #757575;
 }
@@ -36,7 +64,40 @@ section.carousel{
   background-color: #fbd43b;
 }
 
-.screen-container{
-  margin-top: 30vh;
+.img-container{
+  padding-top: 5vh;
   height: 100%;
+}
+
+.hello-container{
+  background-color: #451e36;
+  padding-bottom: 5vh;
+}
+
+.activity-container{
+  height: 100%;
+  margin-top: 2vh;
+  margin-bottom: 5vh;
+}
+.action-container{
+  height: 100%;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+h6.green-text{
+  color: #00c3a3 !important;
+  font-size: 2rem;
+}
+
+.white-text{
+  color: white;
+}
+
+hr{
+  margin: 1vh;
+}
+
+#home{
+  background-color: #38052a;
 }
