@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/static/../assets/css/main.css">
   </head>
   <body>
-    <section class="container">
+    <section class="container-fluid">
         <div class="row img-container">
             <div class="center col s12">
               <img class="responsive-img" src="/static/assets/img/icons/message.png" alt="message icon">
@@ -23,11 +23,11 @@
             <form class="center col s12" id="code-form">
                 <div class="input-field row">
                     <img class="img-icon col s3" src="/static/assets/img/icons/lock.png">
-                    <input name="userCodeToVerification" class="col s9 center" id="user-verification-code" type="text" placeholder="  -  -  -  -  -  ">
+                    <input id="user-verification-code" name="userCodeToVerification" class="col s9 center" type="text" placeholder="  -  -  -  -  -  ">
                     <label for="user-verification-code" class="col s9 center"></label>
                 </div>
-                <div class="row center">
-                    <p class="valign-wrapper"> Reintentar en <img src="/static/assets/img/icons/clock.png"> </p>
+                <div id="seconds-counter" lass="row center">
+                    <label for="seconds-counter"><p class="valign-wrapper"> Reintentar en <img src="/static/assets/img/icons/clock.png"> </p></label>
                 </div>
             </form>
 

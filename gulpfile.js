@@ -14,7 +14,6 @@ var paths = {
   views: "views/",
 
   html: "**/*.html",
-  registerHtml: "views/*.html",
 
   js: "js/**/*.js",
   mainJs: "js/app.js",
@@ -35,7 +34,8 @@ var sources = {
   rootSass: config.source + paths.assets + paths.mainSass,
 
   js: config.source + paths.js,
-  rootJs: config.source + paths.assets + paths.mainJs
+  rootJs: config.source + paths.assets + paths.mainJs,
+  otherJs: config.source + paths.assets + paths.js,
 };
 
 gulp.task('html', function(){
@@ -59,6 +59,12 @@ gulp.task('sass', function(){
 
 gulp.task('js', function(){
   gulp.src(sources.rootJs)
+  .pipe(uglify())
+  .pipe(browserify())
+  .pipe(gulp.dest(config.dist + paths.assets + "/js"));
+
+  gulp.src(sources.otherJs)
+  .pipe(uglify())
   .pipe(browserify())
   .pipe(gulp.dest(config.dist + paths.assets + "/js"));
 });
